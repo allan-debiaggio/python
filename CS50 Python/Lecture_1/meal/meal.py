@@ -11,11 +11,17 @@ Structure your program as such :
 - convert is a function that converts "time", a str in 24-hour format, to the corresponding number of hours
 as a float. For instance : 
     7 : 30 = 7.5
+
+Up for a challenge ? 
+- Add support for 12-hour times, allowing the user to input in these formats too :
+    #:## a.m. and ##:## a.m.
+    #:## p.m. and ##:## p.m.    
 """
 
 def main() :
 
-    user = input("What time is it ? ").split(":")
+    user = input("What time is it ? ").lower().split(":")
+    #user = time_format(user)
     result = convert(user)
     if 7 <=  result <= 8 :
         print("breakfast time")
@@ -32,6 +38,15 @@ def convert(time) :
     number2 = float(time[1])
 
     return number1 + (number2 / 60)
+
+"""
+def time_format(time) :
+    
+    if "p.m." in time :
+        number = float(time[0]) - 12
+        return number
+"""
+
 
 if __name__ == "__main__" :
     main()
