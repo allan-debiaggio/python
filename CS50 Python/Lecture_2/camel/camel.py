@@ -8,8 +8,8 @@ def main():
     
     name = []
     name += input("camelCase : ")
-    print(name)
     print(snake_case(name))
+
 
 
 def snake_case(text):
@@ -27,9 +27,11 @@ def snake_case(text):
             new_name.insert(_ + count, "_")
             count += 1
 
-    # Lowering letters in the final name
-    new_name = str(new_name).lower()
+    # Lowering letters in the final name and assembling a string with the list
+    new_name = "".join(new_name).lower()
+
     return new_name
+
 
 
 main()
