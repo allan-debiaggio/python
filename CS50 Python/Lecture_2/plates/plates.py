@@ -28,8 +28,7 @@ def main() :
         print("Invalid")
 
 def is_valid(s):
-    first_number(s)
-    if start_letters(s) and min_max(s) :
+    if start_letters(s) and min_max(s) and first_number(s) :
         return True
 
 def start_letters(s): # Requirement 1
@@ -49,7 +48,7 @@ def first_number(s): # Requirement 4 / Create a list to store numeric values and
     for _ in range(len(s)):
         if s[_].isnumeric():
             numbers += s[_]
-    if numbers[0] == '0' :
+    if numbers[0] == "0" :
         return False
     else :
         return True
