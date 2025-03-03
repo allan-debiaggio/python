@@ -28,6 +28,7 @@ def main() :
         print("Invalid")
 
 def is_valid(s):
+    first_number(s)
     if start_letters(s) and min_max(s) :
         return True
 
@@ -41,7 +42,17 @@ def min_max(s): # Requirement 2
 
 # def numbers_place(s) : # Requirement 3
 
-# def first_number(s): # Requirement 4
+def first_number(s): # Requirement 4 / Create a list to store numeric values and check if the first 
+# one is a zero
+# Not fully working for now, but good start !
+    numbers = []
+    for _ in range(len(s)):
+        if s[_].isnumeric():
+            numbers += s[_]
+    if numbers[0] == '0' :
+        return False
+    else :
+        return True
 
 # def punctuation(s) : # Requirement 5
      
