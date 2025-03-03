@@ -40,10 +40,11 @@ def min_max(s): # Requirement 2
         return True
 
 # def numbers_place(s) : # Requirement 3
+# Maybe check if numbers is followed by a letter
 
 def first_number(s): # Requirement 4 / Create a list to store numeric values and check if the first 
 # one is a zero
-# Not fully working for now, but good start !
+
     numbers = []
     for _ in range(len(s)):
         if s[_].isnumeric():
@@ -54,6 +55,8 @@ def first_number(s): # Requirement 4 / Create a list to store numeric values and
         return True
 
 # def punctuation(s) : # Requirement 5
+# Is the method .isalpha doing the job ? Or is it not for some special characters ? 
+# I guess it is but need to ask the question to google or a teacher
      
         
 
