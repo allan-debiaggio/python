@@ -18,6 +18,11 @@ Requirements :
     - AAA22A would not. 
 4 - The first number used cannot be a 0
 5 - No periods, spaces or punctuation marks are allowed
+
+STATUS :
+Almost working, errors : 
+list index out of range when H (one character)
+the "." dot is considered a valid character (wot ?)
 """
 
 def main() :
@@ -28,7 +33,7 @@ def main() :
         print("Invalid")
 
 def is_valid(s):
-    if start_letters(s) and min_max(s) and first_number(s) :
+    if start_letters(s) and min_max(s) and first_number(s) and numbers_place(s):
         return True
 
 def start_letters(s): # Requirement 1
@@ -39,8 +44,14 @@ def min_max(s): # Requirement 2
     if 2 <= len(s) <= 6 :
         return True
 
-# def numbers_place(s) : # Requirement 3
-# Maybe check if numbers is followed by a letter
+def numbers_place(s) : # Requirement 3
+# Maybe check if numbers is followed by a letter OR Make a list and check if the last character is a letter
+    for _ in range(len(s)):
+        if s[_].isnumeric():
+            if s[-1].isalpha():
+                return False
+            else :
+                return True
 
 def first_number(s): # Requirement 4 / Create a list to store numeric values and check if the first 
 # one is a zero
@@ -57,7 +68,6 @@ def first_number(s): # Requirement 4 / Create a list to store numeric values and
 # def punctuation(s) : # Requirement 5
 # Is the method .isalpha doing the job ? Or is it not for some special characters ? 
 # I guess it is but need to ask the question to google or a teacher
-     
-        
+# No, it does the job
 
 main()
