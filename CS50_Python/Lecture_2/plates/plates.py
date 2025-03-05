@@ -33,7 +33,7 @@ def main() :
         print("Invalid")
 
 def is_valid(s):
-    if start_letters(s) and min_max(s) and first_number(s) and numbers_place(s):
+    if start_letters(s) and min_max(s) and first_number(s) and numbers_place(s) and punctuation(s):
         return True
 
 def start_letters(s): # Requirement 1
@@ -65,9 +65,13 @@ def first_number(s): # Requirement 4 / Create a list to store numeric values and
     else :
         return True
 
-# def punctuation(s) : # Requirement 5
-# Is the method .isalpha doing the job ? Or is it not for some special characters ? 
-# I guess it is but need to ask the question to google or a teacher
-# No, it does the job
+def punctuation(s) : # Requirement 5
+    for _ in range(len(s)):
+        if s[_].isalpha() :
+            continue
+        elif s[_].isnumeric() :
+            continue
+        else :
+            return False
 
 main()
