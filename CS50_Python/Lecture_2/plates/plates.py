@@ -33,10 +33,12 @@ def main() :
         print("Invalid")
 
 def is_valid(s):
-    if min_max(s) and start_letters(s) and first_number(s) and numbers_place(s) and punctuation(s):
+    if min_max(s) and start_letters(s) and first_number(s) and numbers_place(s) \
+        and punctuation(s):
             return True
 
-def start_letters(s): # Requirement 1
+def start_letters(s):
+    """Requirement 1"""
     if s[0].isalpha() and s[1].isalpha() :
         return True
 
