@@ -2,7 +2,7 @@
 Implement a program that :
 - Enables user to place an order
 - Prompts them, one per line
-- Stops when the user enters Ctrl + D / CTRL D NOT WORKING ON WINDOWS APPARENTLY, USING CTRL C INSTEAD
+- Stops when the user enters Ctrl + D / CTRL D NOT WORKING ON WINDOWS APPARENTLY, USING CTRL Z RETURN INSTEAD
 - After each inputted item, display the total prefixed with a dollar sign
 - Total formatted to two decimals
 - Input case insensitive
@@ -35,7 +35,7 @@ def main () :
                 total += items[order]
                 print(f"${total:.2f}")
             
-        except KeyboardInterrupt :
+        except EOFError :
             break
 
 main()
